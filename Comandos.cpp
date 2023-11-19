@@ -254,7 +254,7 @@ void Comandos::inicializarJuego(Risk &risk)
                 }
                 if (condicional)
                 {
-                    cout << "Este territorio no existe o no pertenece al juagador\n";
+                    cout << "Este territorio no existe o no pertenece al jugador\n";
                 }
 
                 cout << "Presione Enter para continuar...";
