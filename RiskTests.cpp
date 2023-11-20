@@ -136,15 +136,17 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         inicializarJuegoQuemado(risk);
         Comandos comandos;
         Jugador* jugadorActual;
-
+        INFO("1")
         for (Jugador &jugadorX : risk.getListaJugadores())
         {
             if (risk.getCurrentTurn() == jugadorX.getIdJugador())
             {
+                INFO("2")
                 jugadorActual = &jugadorX;
                 break;
-            }
+            }INFO("5")
         }
+        INFO("4")
 
          //Crea Grafo
         Grafo grafo = risk.crearGrafo();
