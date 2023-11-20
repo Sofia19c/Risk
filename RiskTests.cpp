@@ -136,8 +136,19 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         inicializarJuegoQuemado(risk);
         Comandos comandos;
         Jugador* jugadorActual;
+
+        for (Jugador &jugadorX : risk.getListaJugadores())
+        {
+            if (risk.getCurrentTurn() == jugadorX.getIdJugador())
+            {
+                jugadorActual = &jugadorX;
+                break;
+            }
+        }
+
         bool probando = false;
         REQUIRE(probando == false);
+
     }
     
 }
