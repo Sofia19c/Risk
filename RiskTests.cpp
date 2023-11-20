@@ -157,12 +157,7 @@ TEST_CASE("Pruebas calculo de costo conquista"){
 
         pair<int,vector<string>> caminoMenor = listaOpciones[0];
 
-        for(auto opcionCamino : listaOpciones){
-            if(opcionCamino.second.size() <= caminoMenor.second.size()){
-                caminoMenor = opcionCamino;
-            }
-        }
-        
+
         bool probando = false;
         REQUIRE(probando == false);
 
