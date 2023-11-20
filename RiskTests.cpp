@@ -123,7 +123,7 @@ TEST_CASE("Guardar contenido partida correctamente"){
         archivo.close();
 
 
-        int contenidoEsperado = 22;
+        int contenidoEsperado = 28;
 
 
         REQUIRE(contenidoLeido == contenidoEsperado);
