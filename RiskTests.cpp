@@ -151,10 +151,14 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         string territorioDestino = "India";
         vector<pair<int,vector<string>>> listaOpciones;
 
+        INFO("¿pasaste por aqui dimelo?")
         for(auto territorioJugador: jugadorActual->getTerritoriosOcupados()){
+            INFO("pasaste por aqui, cate que no te vi")
             listaOpciones.push_back(grafo.encontrarCaminoMinimo(territorioJugador->getNombre(), territorioDestino));
         }
 
+        INFO("¿pasaste por aqui?")
+        pair<int,vector<string>> caminoMenor = listaOpciones[0];
 
 
         bool probando = false;
