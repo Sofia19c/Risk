@@ -136,38 +136,26 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         inicializarJuegoQuemado(risk);
         Comandos comandos;
         Jugador* jugadorActual;
-        INFO("1")
-        cout<<"hola owo"<<endl;
         for (Jugador &jugadorX : risk.getListaJugadores())
         {
-            cout<<"y"<<endl;
             if (risk.getCurrentTurn() == jugadorX.getIdJugador())
             {
-                INFO("2")
-                cout<<"tu"<<endl;
+               
                 jugadorActual = &jugadorX;
                 break;
-            }INFO("5")
+            }
            
         }
-        INFO("4")
-        cout<<"a"<<endl;
+
         cout<<"jugador actual:"<<jugadorActual->getNombre()<<endl;
          //Crea Grafo
         Grafo grafo = risk.crearGrafo();
         string territorioDestino = "India";
         vector<pair<int,vector<string>>> listaOpciones;
 
-        INFO("¿pasaste por aqui dimelo?")
-        cout<<"b"<<endl;
         for(auto territorioJugador: jugadorActual->getTerritoriosOcupados()){
-            INFO("pasaste por aqui, cate que no te vi")
-            cout<<"d"<<endl;
             listaOpciones.push_back(grafo.encontrarCaminoMinimo(territorioJugador->getNombre(), territorioDestino));
         }
-
-        INFO("¿pasaste por aqui?")
-        cout<<"c"<<endl;
         pair<int,vector<string>> caminoMenor = listaOpciones[0];
 
         for(auto opcionCamino : listaOpciones){
