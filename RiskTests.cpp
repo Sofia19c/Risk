@@ -146,6 +146,10 @@ TEST_CASE("Pruebas calculo de costo conquista"){
             }
         }
 
+         //Crea Grafo
+        Grafo grafo = risk.crearGrafo();
+        string territorioDestino = "India";
+
         bool probando = false;
         REQUIRE(probando == false);
 
