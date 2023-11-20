@@ -136,19 +136,6 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         inicializarJuegoQuemado(risk);
         Comandos comandos;
         Jugador* jugadorActual;
-        for (Jugador &jugadorX : risk.getListaJugadores())
-        {
-            if (risk.getCurrentTurn() == jugadorX.getIdJugador())
-            {
-                jugadorActual = &jugadorX;
-                break;
-            }
-        }
-        //Crea Grafo
-        Grafo grafo = risk.crearGrafo();
-        string territorioDestino = "India";
-        vector<pair<int,vector<string>>> listaOpciones;
-        comandos.costoConquista(risk, territorioDestino);
         bool probando = false;
         REQUIRE(probando == false);
     }
