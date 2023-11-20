@@ -149,6 +149,7 @@ TEST_CASE("Pruebas calculo de costo conquista"){
          //Crea Grafo
         Grafo grafo = risk.crearGrafo();
         string territorioDestino = "India";
+        vector<pair<int,vector<string>>> listaOpciones;
 
         bool probando = false;
         REQUIRE(probando == false);
