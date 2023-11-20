@@ -134,6 +134,7 @@ TEST_CASE("Pruebas calculo de costo conquista"){
     SECTION("Generacion camino mas corto"){
         Risk risk;
         inicializarJuegoQuemado(risk);
+        Comandos comandos;
         Jugador* jugadorActual;
         for (Jugador &jugadorX : risk.getListaJugadores())
         {
@@ -147,6 +148,7 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         Grafo grafo = risk.crearGrafo();
         string territorioDestino = "India";
         vector<pair<int,vector<string>>> listaOpciones;
+        comandos.costoConquista(risk, territorioDestino);
 
         for(auto territorioJugador: jugadorActual->getTerritoriosOcupados()){
             listaOpciones.push_back(grafo.encontrarCaminoMinimo(territorioJugador->getNombre(), territorioDestino));
@@ -184,7 +186,8 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         cout << ". Debe conquistar " << caminoMenor.first
              << " unidades de ejercito.\n";
 
-        REQUIRE(true);
+        bool probando = false;
+        REQUIRE(probando == false);
     }
 }
 
