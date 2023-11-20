@@ -155,7 +155,6 @@ TEST_CASE("Pruebas calculo de costo conquista"){
             listaOpciones.push_back(grafo.encontrarCaminoMinimo(territorioJugador->getNombre(), territorioDestino));
         }
 
-        pair<int,vector<string>> caminoMenor = listaOpciones[0];
 
 
         bool probando = false;
