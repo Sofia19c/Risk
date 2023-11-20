@@ -140,6 +140,7 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         cout<<"hola owo"<<endl;
         for (Jugador &jugadorX : risk.getListaJugadores())
         {
+            cout<<"y"<<endl;
             if (risk.getCurrentTurn() == jugadorX.getIdJugador())
             {
                 INFO("2")
@@ -147,7 +148,7 @@ TEST_CASE("Pruebas calculo de costo conquista"){
                 jugadorActual = &jugadorX;
                 break;
             }INFO("5")
-            cout<<"y"<<endl;
+           
         }
         INFO("4")
         cout<<"a"<<endl;
