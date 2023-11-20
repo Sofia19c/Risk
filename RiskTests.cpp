@@ -152,6 +152,7 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         }
         INFO("4")
         cout<<"a"<<endl;
+        cout<<"jugador actual:"<<jugadorActual->getNombre()<<endl;
          //Crea Grafo
         Grafo grafo = risk.crearGrafo();
         string territorioDestino = "India";
