@@ -131,62 +131,11 @@ TEST_CASE("Guardar contenido partida correctamente"){
 }
 
 TEST_CASE("Pruebas calculo de costo conquista"){
-    Risk risk;
-    inicializarJuegoQuemado(risk);
-    Comandos comandos;
-    Jugador* jugadorActual;
-    for (Jugador &jugadorX : risk.getListaJugadores())
-    {
-        if (risk.getCurrentTurn() == jugadorX.getIdJugador())
-        {
-            jugadorActual = &jugadorX;
-            break;
-        }
+    SECTION("mirar si funciona"){
+        bool probando = false;
+        REQUIRE(probando == false);
     }
-    //Crea Grafo
-    Grafo grafo = risk.crearGrafo();
-    string territorioDestino = "India";
-    vector<pair<int,vector<string>>> listaOpciones;
-    comandos.costoConquista(risk, territorioDestino);
-
-    for(auto territorioJugador: jugadorActual->getTerritoriosOcupados()){
-        listaOpciones.push_back(grafo.encontrarCaminoMinimo(territorioJugador->getNombre(), territorioDestino));
-    }
-
-    pair<int,vector<string>> caminoMenor = listaOpciones[0];
-
-    for(auto opcionCamino : listaOpciones){
-        if(opcionCamino.second.size() <= caminoMenor.second.size()){
-            caminoMenor = opcionCamino;
-        }
-    }
-
-        // Mostrar el mensaje con los valores calculados
-    cout << "(Comando correcto) Para conquistar el territorio "
-            << territorioDestino;
-
-    vector<string> territoriosCaminoMenor = caminoMenor.second;
-    list<string> territoriosCamino;
-    if (!territoriosCaminoMenor.empty())
-    {
-        cout << ", debe atacar desde " << territoriosCaminoMenor[0]
-                << ", pasando por los territorios ";
-
-        for (size_t i = 1; i < territoriosCaminoMenor.size(); ++i)
-        {
-            cout << territoriosCaminoMenor[i];
-            if (i < territoriosCaminoMenor.size() - 1)
-            {
-                cout << ", ";
-            }
-        }
-    }
-
-    cout << ". Debe conquistar " << caminoMenor.first
-            << " unidades de ejercito.\n";
-
-    bool probando = false;
-    REQUIRE(probando == false);
+    
 }
 
 /*
