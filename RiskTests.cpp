@@ -270,5 +270,29 @@ TEST_CASE("Pruebas calculo de costo conquista"){
                 caminoMenor = opcionCamino;
             }
         }
+
+            // Mostrar el mensaje con los valores calculados
+        cout << "(Comando correcto) Para conquistar el territorio "
+             << territorioDestino;
+
+        vector<string> territoriosCaminoMenor = caminoMenor.second;
+        list<string> territoriosCamino;
+        if (!territoriosCaminoMenor.empty())
+        {
+            cout << ", debe atacar desde " << territoriosCaminoMenor[0]
+                 << ", pasando por los territorios ";
+
+            for (size_t i = 1; i < territoriosCaminoMenor.size(); ++i)
+            {
+                cout << territoriosCaminoMenor[i];
+                if (i < territoriosCaminoMenor.size() - 1)
+                {
+                    cout << ", ";
+                }
+            }
+        }
+
+        cout << ". Debe conquistar " << caminoMenor.first
+             << " unidades de ejercito.\n";
     }
 }
