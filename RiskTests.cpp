@@ -240,3 +240,35 @@ void inicializarJuegoQuemado(Risk &risk){
     risk.setCurrentTurn(risk.getListaJugadores().front().getIdJugador());
 
 }
+
+TEST_CASE("Pruebas calculo de costo conquista"){
+    SECTION(""){
+        Risk risk;
+        inicializarJuegoQuemado(prueba);
+        Jugador* jugadorActual;
+        for (Jugador &jugadorX : risk.getListaJugadores())
+        {
+            if (risk.getCurrentTurn() == jugadorX.getIdJugador())
+            {
+                jugadorActual = &jugadorX;
+                break;
+            }
+        }
+        //Crea Grafo
+        Grafo grafo = risk.crearGrafo();
+        string territorioDestino = "India";
+        vector<pair<int,vector<string>>> listaOpciones;
+
+        for(auto territorioJugador: jugadorActual->getTerritoriosOcupados()){
+            listaOpciones.push_back(grafo.encontrarCaminoMinimo(territorioJugador->getNombre(), territorioDestino));
+        }
+
+        pair<int,vector<string>> caminoMenor = listaOpciones[0];
+
+        for(auto opcionCamino : listaOpciones){
+            if(opcionCamino.second.size() <= caminoMenor.second.size()){
+                caminoMenor = opcionCamino;
+            }
+        }
+    }
+}
