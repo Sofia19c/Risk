@@ -242,7 +242,7 @@ void inicializarJuegoQuemado(Risk &risk){
 }
 
 TEST_CASE("Pruebas calculo de costo conquista"){
-    SECTION(""){
+    SECTION("Generacion camino mas corto"){
         Risk risk;
         inicializarJuegoQuemado(risk);
         Jugador* jugadorActual;
