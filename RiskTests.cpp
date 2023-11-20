@@ -181,28 +181,23 @@ TEST_CASE("Pruebas calculo de costo conquista"){
                 << territorioDestino;
 
         vector<string> territoriosCaminoMenor = caminoMenor.second;
-        list<string> territoriosCamino;
-        if (!territoriosCaminoMenor.empty())
-        {
-            cout << ", debe atacar desde " << territoriosCaminoMenor[0]
-                    << ", pasando por los territorios ";
 
-            for (size_t i = 1; i < territoriosCaminoMenor.size(); ++i)
-            {
-                cout << territoriosCaminoMenor[i];
-                if (i < territoriosCaminoMenor.size() - 1)
-                {
-                    cout << ", ";
-                }
-            }
-        }
+        vector<string> territoriosEsperado;
+        territoriosEsperado.push_back("Brasil");
+        territoriosEsperado.push_back("Africa_del_Norte");
+        territoriosEsperado.push_back("Egipto");
+        territoriosEsperado.push_back("Medio_Oriente");
+        territoriosEsperado.push_back("India");
 
-        cout << ". Debe conquistar " << caminoMenor.first
-                << " unidades de ejercito.\n";
+        int costoEsperado = 4;
+        
+        REQUIRE(territoriosCaminoMenor[0] == territoriosEsperado[0] );
+        REQUIRE(territoriosCaminoMenor[1] == territoriosEsperado[1] );
+        REQUIRE(territoriosCaminoMenor[2] == territoriosEsperado[2] );
+        REQUIRE(territoriosCaminoMenor[3] == territoriosEsperado[3] );
+        REQUIRE(territoriosCaminoMenor[4] == territoriosEsperado[4] );
 
-
-        bool probando = false;
-        REQUIRE(probando == false);
+        REQUIRE(costoEsperado == caminoMenor.first );
 
     }
     
