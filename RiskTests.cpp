@@ -158,7 +158,7 @@ TEST_CASE("Pruebas calculo de costo conquista"){
         }
 
         INFO("¿pasaste por aqui?")
-        pair<int,vector<string>> caminoMenor = listaOpciones[0];
+        //pair<int,vector<string>> caminoMenor = listaOpciones[0];
 
 
         bool probando = false;
