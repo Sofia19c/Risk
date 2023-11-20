@@ -244,7 +244,7 @@ void inicializarJuegoQuemado(Risk &risk){
 TEST_CASE("Pruebas calculo de costo conquista"){
     SECTION(""){
         Risk risk;
-        inicializarJuegoQuemado(prueba);
+        inicializarJuegoQuemado(risk);
         Jugador* jugadorActual;
         for (Jugador &jugadorX : risk.getListaJugadores())
         {
