@@ -274,6 +274,9 @@ void inicializarJuegoQuemado(Risk &risk){
 
         Tropa infanteria("Infanteria", 1, jugadorActual.getColor());
         territorioActual.getTropas().push_back(infanteria);
+        list<Territorio *> listaTerritoriosJugador;
+        listaTerritoriosJugador.push_back(&territorioActual);
+        jugadorActual.setTerritoriosOcupados(listaTerritoriosJugador);
 
         iterterritoriosDisponibles = territoriosDisponibles.erase(iterterritoriosDisponibles);
 
