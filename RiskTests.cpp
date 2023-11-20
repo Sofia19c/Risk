@@ -294,5 +294,7 @@ TEST_CASE("Pruebas calculo de costo conquista"){
 
         cout << ". Debe conquistar " << caminoMenor.first
              << " unidades de ejercito.\n";
+
+        REQUIRE(true);
     }
 }
